@@ -7,11 +7,14 @@ cores = [
 (0, 0, 255),   # Vermelho
 ]
 
-x = int(input("Digite o valor da largura da imagen: "))
-y = int(input("Digite o valor da altura da imagen: "))
+largura = int(input("Digite o valor da largura da imagen: "))
+altura = int(input("Digite o valor da altura da imagen: "))
 
-imagem = np.zeros((y, x, 3), dtype=np.uint8)
+imagem = np.zeros((altura, largura, 3), dtype=np.uint8)
 
-b,g,r = cores
+for y in range(altura):
+    for x in range(largura):
+        cor = (0,0,255)
+        imagem[y, x] = cor
 
 cv2.imwrite('teste.png', imagem)
